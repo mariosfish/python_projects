@@ -12,4 +12,11 @@ for i in range(0,5):
 print name
 
 print("test")
+
+print('marios')
+print('marios')
+print('marios')
+print('marios')
+print('marios')
+print('marios')
 print('marios')
