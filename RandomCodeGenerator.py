@@ -1,5 +1,6 @@
 import random
 import string
+import math
 
 print('Random Code Generator')
 
