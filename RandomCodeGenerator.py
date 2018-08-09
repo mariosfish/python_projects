@@ -1,5 +1,4 @@
 import math
-import numbers
 import random
 import string
 
@@ -15,10 +14,8 @@ while digits.isalpha():
 else:
     for i in range(0, int(digits)):
         if i % random.choice(numbers) == 0:
-            code = code+random.choice(string.ascii_letters)
-    else:
-        code = code+str(random.choice(numbers))
-
-
+            code = code + random.choice(string.ascii_letters)
+        else:
+            code = code + str(random.choice(numbers))
 print(code)
-print(len(code))
+print((len(code)))
