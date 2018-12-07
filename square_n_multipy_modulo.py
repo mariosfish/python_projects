@@ -1,17 +1,15 @@
 class SqMl():
 
     """This is an implementation of the square and multiply algorithm in some 
-    modulo n in Python. The general form is ' (b^exp) % n '.
-
+    modulo n in Python. The general form is ' (b^exp) % n '.\n
     base--> Takes an integer as a base.\n
     exp--> Takes an integer as an exponent of the base.\n
     mod--> Takes an integer as the modulo parameter n. Default value is 1.\n
-
     This algorithm is very usefull in cryptography and has O(log n) 
     computational time for big exponents."""
 
     # constructor
-    def __init__(self, base, exp, mod=1):
+    def __init__(self, base, exp, mod):
         self.base = base
         self.exp = exp
         self.mod = mod
