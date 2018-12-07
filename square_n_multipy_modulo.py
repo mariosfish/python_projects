@@ -1,14 +1,14 @@
 class SqMl():
-    
-    """This is an implementation of the square and multiply algorithm in some modulo n
-    in Python. The general form is ' (b^exp) % n '.
+
+    """This is an implementation of the square and multiply algorithm in some 
+    modulo n in Python. The general form is ' (b^exp) % n '.
 
     base--> Takes an integer as a base.\n
     exp--> Takes an integer as an exponent of the base.\n
     mod--> Takes an integer as the modulo parameter n. Default value is 1.\n
 
-    This algorithm is very usefull in cryptography and has O(log n) computational time 
-    for big exponents."""
+    This algorithm is very usefull in cryptography and has O(log n) 
+    computational time for big exponents."""
 
     # constructor
     def __init__(self, base, exp, mod=1):
@@ -29,4 +29,4 @@ class SqMl():
                 product = (product**2) % self.mod
             elif i == "1":
                 product = (product**2 * self.base) % self.mod
-        print(product)
+        return product
