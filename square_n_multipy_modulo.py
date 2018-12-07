@@ -1,4 +1,5 @@
 class SqMl():
+    
     """This is an implementation of the square and multiply algorithm in some modulo n
     in Python. The general form is ' (b^exp) % n '.
 
@@ -29,12 +30,3 @@ class SqMl():
             elif i == "1":
                 product = (product**2 * self.base) % self.mod
         print(product)
-
-
-test = SqMl(15, 103, 143)
-
-test.decToBin()
-
-print(test.decToBin())  # kanonika einai 141 ftanei sto proteleutaio bima
-
-test.sqAndMul()
