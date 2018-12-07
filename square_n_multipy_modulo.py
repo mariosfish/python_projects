@@ -1,0 +1,40 @@
+class SqMl():
+    """This is an implementation of the square and multiply algorithm in some modulo n
+    in Python. The general form is ' (b^exp) % n '.
+
+    base--> Takes an integer as a base.\n
+    exp--> Takes an integer as an exponent of the base.\n
+    mod--> Takes an integer as the modulo parameter n. Default value is 1.\n
+
+    This algorithm is very usefull in cryptography and has O(log n) computational time 
+    for big exponents."""
+
+    # constructor
+    def __init__(self, base, exp, mod=1):
+        self.base = base
+        self.exp = exp
+        self.mod = mod
+
+    # convert the exponent from decimal->binary
+    def decToBin(self):
+        decUpper = bin(self.exp)[2:]
+        return list(decUpper)
+
+    # calculates the remainder of the (base^exp) % n
+    def sqAndMul(self):
+        product = self.base
+        for i in self.decToBin()[1:]:
+            if i == "0":
+                product = (product**2) % self.mod
+            elif i == "1":
+                product = (product**2 * self.base) % self.mod
+        print(product)
+
+
+test = SqMl(15, 103, 143)
+
+test.decToBin()
+
+print(test.decToBin())  # kanonika einai 141 ftanei sto proteleutaio bima
+
+test.sqAndMul()
