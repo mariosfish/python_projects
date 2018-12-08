@@ -8,11 +8,12 @@ class SqMl():
     This algorithm is very usefull in cryptography and has O(log n) 
     computational time for big exponents."""
 
+    @author: "MrMariosfish"
     # constructor
     def __init__(self, base, exp, mod):
-        self.base = base
-        self.exp = exp
-        self.mod = mod
+        self.base = int(base)
+        self.exp = int(exp)
+        self.mod = int(mod)
 
     # convert the exponent from decimal->binary
     def decToBin(self):
