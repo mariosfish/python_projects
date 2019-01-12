@@ -18,4 +18,4 @@ else:
         else:
             code = code + str(random.choice(numbers))
 print(code)
-print((len(code)))
+print((len(code)))  # for debugging
