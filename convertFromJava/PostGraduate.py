@@ -1,13 +1,13 @@
-from Student import Student
+from convertFromJava.Student import Student
 
 
 class PostGraduate(Student):
 
-    #name = ""
+    # name = ""
 
     def __init__(self, supervisor):
-        super().__init__(self.supervisor=supervisor)
-        #self.supervisor = supervisor
+        super().__init__(supervisor)
+        # self.supervisor = supervisor
 
     def printInfo(self):
         super().printInfo()

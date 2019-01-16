@@ -8,7 +8,8 @@ class SqMl():
     This algorithm is very usefull in cryptography and has O(log n) 
     computational time for big exponents."""
 
-    @author: "MrMariosfish"
+    # author: "MrMariosfish"
+
     # constructor
     def __init__(self, base, exp, mod):
         self.base = int(base)

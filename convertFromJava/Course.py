@@ -1,4 +1,4 @@
-from Student import Student
+from convertFromJava.Student import Student
 
 
 class Course:
@@ -10,4 +10,3 @@ class Course:
 
     def printCourseDetails(self):
         print("Course name: " + self.name)
-        
