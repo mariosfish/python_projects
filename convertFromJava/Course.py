@@ -1,4 +1,4 @@
-from convertFromJava.Student import Student
+from . import Student
 
 
 class Course:

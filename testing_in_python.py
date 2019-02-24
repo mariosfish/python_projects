@@ -1,5 +1,5 @@
 import trionymo
-import system
+# import system
 
 
 print("Καλώς ήρθατε στον υπολογιστή ριζών τριωνύμου!\n")
@@ -8,6 +8,6 @@ a = float(input("Παρακαλώ εισάγετε τον συντελεστή �
 b = float(input("Παρακαλώ εισάγετε τον συντελεστή β του τριωνύμου: "))
 c = float(input("Παρακαλώ εισάγετε τον συντελεστή γ του τριωνύμου: "))
 
-rizes = trionymo(a, b, c)
+rizes = trionymo.trionymo(a, b, c)
 
 print(rizes)
