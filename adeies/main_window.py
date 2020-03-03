@@ -40,7 +40,7 @@ start_date_entry = Entry(root, width=20)
 # Frames
 # buttonFrame = Frame(root, padx=10, pady=10)
 
-# Buttons
+# Button
 create = Button(root, text='Δημιουργία άδειας')
 
 # Positioning
