@@ -68,7 +68,7 @@ antikatastatis.grid(row=10, column=0, padx=10, pady=5, sticky=W)
 antikatastatis_entry.grid(row=10, column=1, padx=10, pady=5, sticky=W)
 start_date.grid(row=11, column=0, padx=10, pady=5, sticky=W)
 start_date_entry.grid(row=11, column=1, padx=10, pady=5, sticky=W)
-create.grid(row=100, columnspan=2, pady=20)  # Button
+create.grid(row=100, columnspan=2, pady=20)  # button
 
 
 root.mainloop()
