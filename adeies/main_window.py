@@ -1,4 +1,24 @@
 from tkinter import *
+from docx import Document
+
+try:
+    doc = Document('adeia-template.docx')
+except:
+    e = FileNotFoundError()
+
+
+def replace_values():
+    replacements = {
+        '[am]': am_entry.get(),
+        '[bathmos]': bathmos_entry.get()
+    }
+
+    for paragraph in doc.paragraphs:
+        for key in replacements:
+            paragraph.text = paragraph.text.replace(key, replacements[key])
+
+    doc.save('document_'+f'{onoma_entry.get()}'+'.docx')
+
 
 root = Tk()
 root.title('Άδεια Στρατιωτικού Προσωπικού')
@@ -41,7 +61,7 @@ start_date_entry = Entry(root, width=20)
 # buttonFrame = Frame(root, padx=10, pady=10)
 
 # Button
-create = Button(root, text='Δημιουργία άδειας')
+create = Button(root, text='Δημιουργία άδειας', command=replace_values)
 
 # Positioning
 am.grid(row=0, column=0, pady=5, sticky=W, padx=10)
