@@ -3,7 +3,7 @@ from tkinter import *
 root = Tk()
 root.title('Άδεια Στρατιωτικού Προσωπικού')
 root.iconbitmap('')
-root.geometry('500x450')
+root.geometry('500x500')
 
 # Labels
 bathmos = Label(root, text="Βαθμός:", font=('Arial', 12))
