@@ -18,7 +18,7 @@ password = input("Type your password and press enter: ")
 subject = "last test"
 body = "This is an email with attachment sent from Python for testing"
 file_attachment = 'test.pdf'
-contacts = 'contacts.csv'
+contacts = 'contacts.txt'
 
 
 def sendMail(sender_email, receiver_email, smtp_server, port, password, subject, body, file_attachment):
@@ -34,7 +34,7 @@ def sendMail(sender_email, receiver_email, smtp_server, port, password, subject,
     message.attach(MIMEText(body, "plain"))
 
     # filename = os.path.join('mail','test.pdf')  # In same directory as script
-    filename = Path("mail/") / file_attachment
+    filename = Path("GitHub/python_projects/mail") / file_attachment
 
     # Open PDF file in binary mode
     with open(filename, "rb") as attachment:
@@ -74,17 +74,18 @@ def sendMail(sender_email, receiver_email, smtp_server, port, password, subject,
 
 
 # Main loop
-with open(Path("mail/")/contacts) as file:
-    reader = csv.reader(file)  # for txt: file.readline()
+with open(Path("GitHub/python_projects/mail")/contacts) as file:
+    # reader = csv.reader(file)  # for txt: file.readlines()
+    reader = file.readlines()
     # next(reader)  # Skip header row if csv with header line
     for email in reader:
-        sendMail(sender_email, email[0].strip(), smtp_server,
+        sendMail(sender_email, email.strip(), smtp_server,
                  port, password, subject, body, file_attachment)
         #  write to a log file
-        f = open(Path("mail/logfile.txt"), "a")
+        f = open(Path("GitHub/python_projects/mail/logfile.txt"), "a")
         f.write(
-            f"Το email εστάλη στην διεύθυνση {email[0].strip()} την {datetime.now()}\n")
+            f"Το email εστάλη στην διεύθυνση {email.strip()} την {datetime.now()}\n")
         f.close()
         print(
-            f"Το email εστάλη στην διεύθυνση {email[0].strip()} την {datetime.now()}")
+            f"Το email εστάλη στην διεύθυνση {email.strip()} την {datetime.now()}")
         time.sleep(1)
