@@ -1,10 +1,8 @@
-import math
 import random
 import string
 
 code = ''
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-digits = ''
 
 print('Random Code Generator')
 digits = input('Enter the desire number of digits of your code: ')

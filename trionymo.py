@@ -2,7 +2,6 @@ from math import sqrt
 
 
 def trionymo(a, b, c):
-
     D = float(b**2 - 4*a*c)
 
     if a == 0:

@@ -11,11 +11,9 @@ SITE_LIST = ['bebeosis.army.gr', 'spider.army.gr', 'bbb.army.gr', 'army.gr', 'sm
              'fww.army.gr', 'ethnofilaki.army.gr', 'asye.army.gr', 'sse190.army.gr', 'frourarxeioathinon.army.gr',
              'steatx.army.gr', '401gsn.army.gr', '404gsn.army.gr', '414snen.army.gr', 'alumnisetha.army.gr',
              'alumniadispo.army.gr', 'alumnispsx.army.gr', 'alumnisan.army.gr', 'alumnismy.army.gr',
-             'forensics.army.gr',
-             'emathisi.army.gr', 'esetha.army.gr', 'eadispo.army.gr', 'espsx.army.gr', 'wargames.army.gr',
+             'forensics.army.gr', 'emathisi.army.gr', 'esetha.army.gr', 'eadispo.army.gr', 'espsx.army.gr', 'wargames.army.gr',
              'elearning-spb.army.gr', 'elearning-des.army.gr', 'elearning-sas.army.gr', 'elearning-sdb.army.gr',
-             'elearning-sem.army.gr',
-             'elearning-sey.army.gr', 'elearning-smx.army.gr', 'elearning-spz.army.gr', 'elearning-sth.army.gr',
+             'elearning-sem.army.gr', 'elearning-sey.army.gr', 'elearning-smx.army.gr', 'elearning-spz.army.gr', 'elearning-sth.army.gr',
              'elearning-syp.army.gr', 'elearning-tx.army.gr', 'elearning-smy.army.gr', 'elearning-diged.army.gr',
              'elearning-sxo.army.gr']
 duration_ = []
