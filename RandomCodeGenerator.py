@@ -9,7 +9,6 @@ digits = input('Enter the desire number of digits of your code: ')
 
 while digits.isalpha():
     digits = input('Enter the desire number of digits of your code: ')
-else:
     for i in range(0, int(digits)):
         if i % random.choice(numbers) == 0:
             code = code + random.choice(string.ascii_letters)
