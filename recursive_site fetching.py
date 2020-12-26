@@ -1,18 +1,21 @@
 from urllib.request import urlparse, urljoin
 
 import colorama
+import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 
 # init the colorama module
 colorama.init()
 GREEN = colorama.Fore.GREEN
-GRAY = colorama.Fore.LIGHTBLACK_EX
+RED = colorama.Fore.RED
 RESET = colorama.Fore.RESET
 
 # initialize the set of links (unique links)
 internal_urls = set()
 external_urls = set()
+
+data = pd.DataFrame(columns=['urls'])
 
 
 def is_valid(url):
@@ -27,11 +30,14 @@ def get_all_website_links(url):
     """
     Returns all URLs that is found on `url` in which it belongs to the same website
     """
+    global data
+
     # all URLs of `url`
     urls = set()
     # domain name of the URL without the protocol
     domain_name = urlparse(url).netloc
-    soup = BeautifulSoup(requests.get(url).content, "html.parser")
+    soup = BeautifulSoup(requests.get(url, timeout=10).content,
+                         "html.parser", from_encoding="utf-8")
 
     for a_tag in soup.findAll("a"):
         href = a_tag.attrs.get("href")
@@ -52,7 +58,7 @@ def get_all_website_links(url):
         if domain_name not in href:
             # external link
             if href not in external_urls:
-                print(f"{GRAY}[!] External link: {href}{RESET}")
+                print(f"{RED}[!] External link: {href}{RESET}")
                 external_urls.add(href)
             continue
         print(f"{GREEN}[*] Internal link: {href}{RESET}")
@@ -65,7 +71,7 @@ def get_all_website_links(url):
 total_urls_visited = 0
 
 
-def crawl(url, max_urls=50):
+def crawl(url, max_urls=10000):
     """
     Crawls a web page and extracts all links.
     You'll find all links in `external_urls` and `internal_urls` global set variables.
@@ -83,6 +89,8 @@ def crawl(url, max_urls=50):
 
 if __name__ == "__main__":
     crawl("http://army.gr")
+    data['urls'] = pd.Series(list(internal_urls))
+    data.to_excel('urls.xlsx', index=None)
     print("[+] Total External links:", len(external_urls))
     print("[+] Total Internal links:", len(internal_urls))
     print("[+] Total:", len(external_urls) + len(internal_urls))
